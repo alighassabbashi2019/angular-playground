@@ -1,0 +1,28 @@
+<!-- <p appHighlight>aasdsadks!</p> -->
+<!-- this was a test for custom directive -->
+
+<div class="signup-container">
+
+  <form class="signup-form">
+
+    <div class="email inputs">
+        <label for="email">email</label>
+        <input type="email" #email (blur)="addField('email', email.value)" autocomplete="true" name="email" id="email"/>
+    </div>
+
+    <div class="username inputs">
+      <label for="username">username</label>
+      <input type="text" #username (blur)="addField('username', username.value)" autocomplete="true" name="username" id="username"/>
+    </div>
+
+    <div class="password inputs">
+      <label for="password">password</label>
+      <input type="password" #password (blur)="addField('password', password.value)" autocomplete="true" name="password" id="password"/>
+    </div>
+
+    <button type="button" (click)="signupUser()">signup</button>
+
+    <app-signup-message [show]="signupButtonClicked" [createdAt]="createdAt" [user]="createdUser"></app-signup-message>
+  </form>
+
+</div>
