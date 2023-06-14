@@ -1,5 +1,5 @@
 <div class="child-container" (click)="sendDataToParent(); $event.stopPropagation()">
   <h2>Child Copmonent</h2>
-  <p>click on me!</p>
-  <span>{{IncomingData}}</span>
+  <span [ngStyle]="{display: 'block'}">{{IncomingData}}</span>
+  <p [hidden]="showClickMe">click on me!</p>
 </div>

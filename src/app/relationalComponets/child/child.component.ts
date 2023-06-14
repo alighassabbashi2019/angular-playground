@@ -8,7 +8,8 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class ChildComponent implements OnInit {
 
   @Input() IncomingData!: string;
-  @Output() outgoingData = new EventEmitter<string>()
+  @Output() outgoingData = new EventEmitter<string>();
+  showClickMe: boolean = true;
 
   constructor() {}
 
@@ -17,6 +18,9 @@ export class ChildComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    setInterval(()=> {
+      this.showClickMe = !this.showClickMe
+    },1000)
   }
 
 }
