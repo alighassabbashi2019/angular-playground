@@ -2,27 +2,58 @@
 <!-- this was a test for custom directive -->
 
 <div class="signup-container">
-
   <form class="signup-form">
-
     <div class="email inputs">
-        <label for="email">email</label>
-        <input type="email" #email (blur)="addField('email', email.value)" autocomplete="true" name="email" id="email"/>
+      <label for="email">email</label>
+      <input
+        type="email"
+        #email
+        [value]="userData.email"
+        [formControl]="emailControl"
+        (keyup)="userData.email = emailControl.value"
+        autocomplete="true"
+        name="email"
+        id="email"
+      />
+      <span *ngIf="emailControl.value !== ''" (click)="emailControl.setValue('')">+</span>
     </div>
 
     <div class="username inputs">
       <label for="username">username</label>
-      <input type="text" #username (blur)="addField('username', username.value)" autocomplete="true" name="username" id="username"/>
+      <input
+        type="text"
+        #username
+        [value]="userData.username"
+        [formControl]="usernameControl"
+        (keyup)="userData.username = usernameControl.value"
+        autocomplete="true"
+        name="username"
+        id="username"
+      />
+      <span *ngIf="usernameControl.value !== ''" (click)="usernameControl.setValue('')">+</span>
     </div>
 
     <div class="password inputs">
       <label for="password">password</label>
-      <input type="password" #password (blur)="addField('password', password.value)" autocomplete="true" name="password" id="password"/>
+      <input
+        type="password"
+        #password
+        [value]="userData.password"
+        [formControl]="passwordControl"
+        (keyup)="userData.password = passwordControl.value"
+        autocomplete="true"
+        name="password"
+        id="password"
+      />
+      <span *ngIf="passwordControl.value !== ''" (click)="passwordControl.setValue('')">+</span>
     </div>
 
     <button type="button" (click)="signupUser()">signup</button>
 
-    <app-signup-message [show]="signupButtonClicked" [createdAt]="createdAt" [user]="createdUser"></app-signup-message>
+    <app-signup-message
+      [show]="signupButtonClicked"
+      [createdAt]="createdAt"
+      [user]="createdUser"
+    ></app-signup-message>
   </form>
-
 </div>

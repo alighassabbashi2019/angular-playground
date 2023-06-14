@@ -6,9 +6,13 @@ html, body {
     height: 100vh;
 }
 
-p, h2, h1 {
+p, h2, h1, span {
   direction: rtl;
   text-align: right;
   font-family: 'vazirmatn';
   font-feature-settings: "ss01", "tnum";
+}
+
+label, button {
+  font-family: Vazirmatn;
 }

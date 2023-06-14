@@ -5,6 +5,7 @@ import { AghDirectiveModule } from '../agh-directive/agh-directive.module';
 import { FormsModule } from '@angular/forms';
 import { ToJalaliPipe } from 'src/lib/to-jalali.pipe';
 import { SignupMessageComponent } from './signup-message/signup-message.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { SignupMessageComponent } from './signup-message/signup-message.componen
   imports: [
     CommonModule,
     AghDirectiveModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
 })
 export class AuthModule {
