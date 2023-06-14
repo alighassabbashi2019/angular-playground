@@ -14,6 +14,10 @@ export class HeaderComponent implements OnInit {
     this._routerService.navigate(['/auth'])
   }
 
+  goToParent() {
+    this._routerService.navigate(['/parent'])
+  }
+
   ngOnInit(): void {
   }
 

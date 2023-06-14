@@ -1,0 +1,7 @@
+<div class="parent-container">
+  <div class="parent-content">
+    <h1>Parent Component</h1>
+    <p>{{childData}}</p>
+  </div>
+  <app-child [IncomingData]="'parent send this sentence!'" (outgoingData)="eventHandler($event)"></app-child>
+</div>
