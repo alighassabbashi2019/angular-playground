@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { CreateUserDto, LoginDataDto } from '../../../shared/dtos/user.dto';  // simiulate libs/shared in nx monorepo
+import { CreateUserDto, LoginDataDto, User } from '../../../shared/backend/dtos/user.dto';  // simiulate libs/shared in nx monorepo
+import { addUser } from 'server/client.user';
 
 @Injectable({
   providedIn: 'root'
@@ -13,9 +14,10 @@ export class RequsetsService {
   signup(userData: CreateUserDto) {
     // send request to backend for sign a user up
     // return access and refresh tokens
+    console.log(userData);
     if(userData.username && userData.email && userData.password) {
-      console.log('send request to backend for sign a user up');
-      return Object.assign(userData, {id: Math.random()})
+      const user = addUser(userData);
+      return user;
     }
     return null;
   }

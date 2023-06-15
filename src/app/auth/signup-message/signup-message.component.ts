@@ -1,5 +1,5 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { CreateUserDto } from 'shared/dtos/user.dto';
+import { CreateUserDto } from 'shared/backend/dtos/user.dto';
 
 @Component({
   selector: 'app-signup-message',

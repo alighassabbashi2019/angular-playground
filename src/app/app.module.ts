@@ -18,7 +18,7 @@ import { ChildComponent } from './relationalComponets/child/child.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AuthModule
+    AuthModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

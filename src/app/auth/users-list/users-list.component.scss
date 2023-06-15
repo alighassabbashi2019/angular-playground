@@ -1,0 +1,9 @@
+@import 'ag-grid-community/styles/ag-grid.css';
+@import 'ag-grid-community/styles/ag-theme-alpine.css';
+.users-list-container {
+  width: inherit;
+  height: inherit;
+  display: flex;
+  justify-content: center;
+  padding-top: 250px;
+}

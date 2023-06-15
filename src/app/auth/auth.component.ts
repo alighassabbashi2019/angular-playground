@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RequsetsService } from './requsets.service';
-import { CreateUserDto, SignupInputFields } from '../../../shared/dtos/user.dto';
+import { CreateUserDto, SignupInputFields } from '../../../shared/backend/dtos/user.dto';
 import { ControlContainer, FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 
 @Component({
@@ -42,7 +42,6 @@ export class AuthComponent implements OnInit {
     if (createdUser) {
       this.createdAt = new Date();
       this.signupButtonClicked = true;
-      console.log(createdUser);
       this.userData = {email: '', username: '', password: ''};
       this.createdUser = createdUser;
     }

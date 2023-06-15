@@ -4,21 +4,22 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-
   constructor(private readonly _routerService: Router) {}
 
   goToSignup() {
-    this._routerService.navigate(['/auth'])
+    this._routerService.navigate(['/auth']);
   }
 
   goToParent() {
-    this._routerService.navigate(['/parent'])
+    this._routerService.navigate(['/parent']);
   }
 
-  ngOnInit(): void {
+  goToUsersList() {
+    this._routerService.navigate(['/users']);
   }
 
+  ngOnInit(): void {}
 }
